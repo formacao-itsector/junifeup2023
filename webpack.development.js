@@ -7,15 +7,17 @@ const {
 
 const path = require('path');
 
+// configuração especifíca para desenvolvimento
+
 module.exports = {
-  mode: 'development',
-  entry: './src/index.tsx',
+  mode: 'development', // https://webpack.js.org/configuration/mode/
+  entry: './src/index.tsx', // https://webpack.js.org/configuration/entry-context/#entry
   output: {
-    path: path.join(__dirname, '/build/'),
-    publicPath: '/'
+    path: path.join(__dirname, '/build/'), // https://webpack.js.org/configuration/output/#outputpath
+    publicPath: '/' // https://webpack.js.org/configuration/output/#outputpublicpath
   },
-  devtool: 'source-map',
-  // shared
+  devtool: 'source-map', // https://webpack.js.org/configuration/devtool/
+  // configurações partilhadas
   devServer: devServerConfig,
   module: moduleConfig,
   resolve: resolveConfig,
