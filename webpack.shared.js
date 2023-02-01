@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
@@ -19,6 +20,11 @@ const moduleConfig = {
     {
       test: /\.(ico|jpg|jpeg|png|gif)$/,
       use: ['url-loader']
+    },
+    {
+      test: /\.css$/i,
+      include: path.resolve(__dirname, 'src'),
+      use: ['style-loader', 'css-loader', 'postcss-loader']
     }
   ]
 };
