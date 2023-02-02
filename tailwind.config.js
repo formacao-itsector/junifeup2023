@@ -4,10 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Figtree: 'Figtree, sans-serif'
-      }
-    }
+        Figtree: 'Figtree, sans-serif',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
-

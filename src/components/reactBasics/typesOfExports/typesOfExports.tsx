@@ -1,57 +1,71 @@
-import React, { useState } from 'react';
-import { NamedExportButton as NamedExportBtn } from '../'; //Opt-in Aliasing import
+import React from 'react';
+import { NamedExportButton as NamedExportBtn, SectionLink, TriangleButton } from '../../'; //Opt-in Aliasing import
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import DefaultExportedButton from '../button/button';
+import DefaultExportedButton from '../button/button';
 import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { ExternalLinkIcon, TriangleDownIcon } from '@radix-ui/react-icons';
-import { codeSnippets } from '../../reactSyntaxHighlighter';
+import { useTypesOfExportsHelper } from './typesOfExports.helper';
 
 export const TypesOfExports: React.FC = () => {
-  const [isNamedSnippetVisible, setIsNamedSnippetVisible] =
-    useState<boolean>(false);
-
-  const handleNamedSnippetVisibilityOnClick = () => {
-    setIsNamedSnippetVisible(!isNamedSnippetVisible);
-  };
+  const {
+    areSnippetsVisible,
+    handleSnippetsVisibilityOnClick,
+    handleNextSnippetOnClick,
+    isNextSnippetVisible,
+    codeSnippets,
+  } = useTypesOfExportsHelper();
 
   return (
-    <div className="">
-      <a
+    <div>
+      <SectionLink
+        label="Named Vs. Default Exports"
         href="https://betterprogramming.pub/understanding-the-difference-between-named-and-default-exports-in-react-2d253ca9fc22"
-        className="text-2xl w-fit mb-2 transition-all hover:text-violet-600 "
-      >
-        <div className="flex flex-row">
-          Named Vs. Default Exports <ExternalLinkIcon />
-        </div>
-      </a>
-      <div className="gap-3 max-w-5xl flex items-start justify-center transition-all flex-col mt-5 md:flex-row md:items-center md:mt-0">
-        {!isNamedSnippetVisible ? (
-          <TriangleDownIcon
-            className="w-12 h-12 animate-bounce hover:cursor-pointer"
-            onClick={handleNamedSnippetVisibilityOnClick}
-          />
+        hasIcon
+      />
+
+      <div className="gap-3 flex items-center justify-center transition-all flex-col md:flex-row">
+        {!areSnippetsVisible ? (
+          <TriangleButton triangleUp={false} onClick={handleSnippetsVisibilityOnClick} />
         ) : (
-          <div className="grid ">
-            <SyntaxHighlighter
-              language="tsx"
-              style={duotoneDark}
-              wrapLines
-              wrapLongLines
-              showLineNumbers
-              className="rounded"
-            >
-              {codeSnippets.NamedExportButtonSyntax}
-            </SyntaxHighlighter>
-            <NamedExportBtn
-              onClick={handleNamedSnippetVisibilityOnClick}
-              label={'Hide Snippet'}
-            />
+          <div className="flex flex-col items-center">
+            <div className="grid w-3xl h-3xl">
+              <SyntaxHighlighter
+                language="tsx"
+                style={duotoneDark}
+                wrapLines
+                wrapLongLines
+                showLineNumbers
+                className="md:min-w-[44rem] md:max-w-[44rem] rounded"
+              >
+                {codeSnippets.NamedExportButtonSyntax}
+              </SyntaxHighlighter>
+            </div>
+            {!isNextSnippetVisible && (
+              <div className="w-full">
+                <NamedExportBtn onClick={handleNextSnippetOnClick} label={'Next Snippet'} />
+              </div>
+            )}
           </div>
         )}
       </div>
-      {/* <div className="px-40 py-8 gap-3 flex justify-center items-center flex-col md:flex-row  border-2 border-violet-800">
-        <DefaultExportedButton />
-      </div> */}
+      <div className="gap-3 flex items-center justify-center transition-all flex-col md:flex-row">
+        {areSnippetsVisible && isNextSnippetVisible && (
+          <div className="flex flex-col items-center">
+            <div className="grid w-3xl h-3xl">
+              <SyntaxHighlighter
+                language="tsx"
+                style={duotoneDark}
+                wrapLines
+                wrapLongLines
+                showLineNumbers
+                className="md:min-w-[44rem] md:max-w-[44rem] rounded"
+              >
+                {codeSnippets.DefaultExportButtonSyntax}
+              </SyntaxHighlighter>
+              <DefaultExportedButton onClick={handleSnippetsVisibilityOnClick} label={'Close Snippets'} />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

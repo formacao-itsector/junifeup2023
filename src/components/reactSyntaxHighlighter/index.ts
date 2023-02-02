@@ -1,5 +1,6 @@
-import { NamedExportButtonSyntax } from './reactSyntaxHighlighter';
+import { NamedExportButtonSyntax, DefaultExportButtonSyntax } from './reactSyntaxHighlighter';
 
 export const codeSnippets = {
-  NamedExportButtonSyntax
+  NamedExportButtonSyntax,
+  DefaultExportButtonSyntax,
 };
