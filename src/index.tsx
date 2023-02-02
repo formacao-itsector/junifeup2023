@@ -5,7 +5,7 @@ import { ReactBasics } from './screens';
 
 const App = () => {
   return (
-    <div className="bg-zinc-900 font-Figtree text-white font-bold">
+    <div>
       {/* TODO: 
         Ideia seria cada Page ser fórum like, como a documentação 
           que encontramos em diferentes websites. 

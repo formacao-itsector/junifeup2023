@@ -3,7 +3,7 @@ import { Header, TypesOfExports } from '../../components';
 
 export const ReactBasics: React.FC = () => {
   return (
-    <div className="w-screen h-screen flex flex-col">
+    <div className="flex flex-col items-center">
       <Header classTitle={'React Basics'} />
 
       <TypesOfExports />
