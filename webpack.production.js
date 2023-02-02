@@ -1,9 +1,4 @@
-const {
-  moduleConfig,
-  devServerConfig,
-  pluginConfig,
-  resolveConfig
-} = require('./webpack.shared');
+const { moduleConfig, devServerConfig, pluginConfig, resolveConfig } = require('./webpack.shared');
 
 const path = require('path');
 
@@ -14,14 +9,14 @@ module.exports = {
   entry: './src/index.tsx', // https://webpack.js.org/configuration/entry-context/#entry
   output: {
     path: path.join(__dirname, '/build/'), // https://webpack.js.org/configuration/output/#outputpath
-    chunkFilename: '[contenthash].bundle.js' // https://webpack.js.org/configuration/output/#outputchunkfilename
+    chunkFilename: '[contenthash].bundle.js', // https://webpack.js.org/configuration/output/#outputchunkfilename
   },
   optimization: {
-    minimize: true // https://webpack.js.org/configuration/optimization/#optimizationminimize
+    minimize: true, // https://webpack.js.org/configuration/optimization/#optimizationminimize
   },
   // configurações partilhadas
   devServer: devServerConfig,
   module: moduleConfig,
   resolve: resolveConfig,
-  plugins: pluginConfig()
+  plugins: pluginConfig(),
 };

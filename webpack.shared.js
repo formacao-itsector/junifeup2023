@@ -13,20 +13,20 @@ const moduleConfig = {
       test: /\.(?:ts|tsx)$/,
       exclude: /node_modules/,
       resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json'],
       },
-      use: 'ts-loader'
+      use: 'ts-loader',
     },
     {
       test: /\.(ico|jpg|jpeg|png|gif)$/,
-      use: ['url-loader']
+      use: ['url-loader'],
     },
     {
       test: /\.css$/i,
       include: path.resolve(__dirname, 'src'),
-      use: ['style-loader', 'css-loader', 'postcss-loader']
-    }
-  ]
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    },
+  ],
 };
 
 // permite alterar como o webpack resolve/importa modulos
@@ -34,7 +34,7 @@ const moduleConfig = {
 // https://webpack.js.org/configuration/resolve/
 
 const resolveConfig = {
-  alias: {}
+  alias: {},
 };
 
 // configuração de plugins
@@ -52,12 +52,12 @@ const pluginConfig = () => {
       template: './public/template.html',
       filename: 'index.html',
       inject: 'head',
-      favicon: './public/favicon.ico'
+      favicon: './public/favicon.ico',
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
-      emitWarning: true
-    })
+      emitWarning: true,
+    }),
   ];
 };
 
@@ -66,12 +66,12 @@ const pluginConfig = () => {
 
 const devServerConfig = {
   port: 5005,
-  historyApiFallback: true
+  historyApiFallback: true,
 };
 
 module.exports = {
   moduleConfig,
   resolveConfig,
   pluginConfig,
-  devServerConfig
+  devServerConfig,
 };
