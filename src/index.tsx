@@ -6,12 +6,7 @@ import { Header } from './components';
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center mb-12">
-      {/* TODO: 
-        Ideia seria cada Page ser fórum like, como a documentação 
-          que encontramos em diferentes websites. 
-          Onde todos os topics que vamos falar estão numa página estatica onde simplesmente vamos dando scroll aos temas.
-      */}
+    <div className="flex flex-col items-center gap-16 mb-40">
       <Header classTitle={'React Basics'} />
       <ReactBasics />
     </div>
