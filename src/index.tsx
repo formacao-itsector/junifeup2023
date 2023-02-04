@@ -1,23 +1,33 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/global.css';
-import { ReactBasics, StateManagement } from './screens';
+import { StateManagement } from './screens';
+// import { ReactBasics } from './screens';
 import { useContextelper } from './hooks';
 import { Header } from './components';
+import { Provider } from 'react-redux';
+import { reduxStore } from './store';
 
 const App = () => {
   const { ThemeContext, LanguageContext, currentTheme, currentLanguage } = useContextelper();
 
   return (
-    <div className="flex flex-col items-center mb-12">
-      {/* TODO:
+    <Provider store={reduxStore}>
+      <ThemeContext.Provider value={currentTheme}>
+        <LanguageContext.Provider value={currentLanguage}>
+          <div className="flex flex-col items-center mb-12">
+            {/* TODO:
         Ideia seria cada Page ser fórum like, como a documentação
           que encontramos em diferentes websites.
           Onde todos os topics que vamos falar estão numa página estatica onde simplesmente vamos dando scroll aos temas.
       */}
-      <Header classTitle={'React Basics'} />
-      <ReactBasics />
-    </div>
+            <Header classTitle={'React Basics'} />
+            {/* <ReactBasics /> */}
+            <StateManagement />
+          </div>
+        </LanguageContext.Provider>
+      </ThemeContext.Provider>
+    </Provider>
   );
 };
 

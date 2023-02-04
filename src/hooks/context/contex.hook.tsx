@@ -20,50 +20,46 @@ import React, { useState } from 'react';
 
 export enum ThemeEnum {
   Light = 'Light',
-  Dark = 'Dark'
+  Dark = 'Dark',
 }
 
 export enum LanguageEnum {
   PT = 'pt',
-  EN = 'en'
+  EN = 'en',
 }
 
 export interface UseContextOutput {
   ThemeContext: React.Context<ThemeEnum>;
   LanguageContext: React.Context<LanguageEnum>;
-  themeSwitch: () => void;
-  languageSwitch: () => void;
+  userThemeSwitch: () => void;
+  userLanguageSwitch: () => void;
   currentTheme: ThemeEnum;
   currentLanguage: LanguageEnum;
 }
 
 export const useContextelper = (): UseContextOutput => {
   const [currentTheme, setCurrentTheme] = useState(ThemeEnum.Dark);
-  const [currentLanguage, setCurrenLanguage] = useState(LanguageEnum.PT);
+  const [currentLanguage, setCurrenLanguage] = useState(LanguageEnum.EN);
 
   //Theme Context
   const ThemeContext = React.createContext(currentTheme);
   //Language Context
   const LanguageContext = React.createContext(currentLanguage);
 
-  const themeSwitch = () => {
-    setCurrentTheme(
-      currentTheme === ThemeEnum.Light ? ThemeEnum.Dark : ThemeEnum.Light
-    );
+  const userThemeSwitch = () => {
+    setCurrentTheme(currentTheme === ThemeEnum.Light ? ThemeEnum.Dark : ThemeEnum.Light);
   };
 
-  const languageSwitch = () => {
-    setCurrenLanguage(
-      currentLanguage === LanguageEnum.PT ? LanguageEnum.EN : LanguageEnum.PT
-    );
+  const userLanguageSwitch = () => {
+    setCurrenLanguage(currentLanguage === LanguageEnum.PT ? LanguageEnum.EN : LanguageEnum.PT);
   };
 
   return {
     ThemeContext,
-    themeSwitch,
+    userThemeSwitch,
     LanguageContext,
-    languageSwitch,
+    userLanguageSwitch,
     currentTheme,
-    currentLanguage
+    currentLanguage,
   };
 };
