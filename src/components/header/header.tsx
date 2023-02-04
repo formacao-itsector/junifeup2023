@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ classTitle }) => {
         {classTitle}
       </h1>
 
-      <div className="grid grid-cols-2 gap-4 mt-3 mb-36 sm:grid-cols-4 items-center">
+      <div className="grid grid-cols-2 gap-4 mt-3 sm:grid-cols-4 items-center">
         {routers.map((router, i) => {
           return (
             <a
