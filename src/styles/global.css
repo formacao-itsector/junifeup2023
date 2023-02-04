@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+body {
+  @apply bg-zinc-900 text-white font-Figtree;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800;
+  border-radius: 14px;
+}

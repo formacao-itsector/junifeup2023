@@ -1,11 +1,9 @@
 import React from 'react';
-import { Header, TypesOfExports } from '../../components';
+import { TypesOfExports } from '../../components';
 
 export const ReactBasics: React.FC = () => {
   return (
-    <div className="w-screen h-screen flex flex-col">
-      <Header classTitle={'React Basics'} />
-
+    <div className="mx-2 md:mx-0">
       <TypesOfExports />
     </div>
   );
