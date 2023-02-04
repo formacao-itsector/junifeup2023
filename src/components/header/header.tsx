@@ -1,11 +1,16 @@
 import React from 'react';
 
 interface HeaderProps {
-  classTitle: 'React Basics' | 'Typescript'; //completar
+  classTitle: 'React Basics' | 'Typescript' | 'State Management'; //completar
 }
 
 export const Header: React.FC<HeaderProps> = ({ classTitle }) => {
-  const routers = ['React Basics', 'Typescript', 'Zustand', 'Performance'];
+  const routers = [
+    'React Basics',
+    'Typescript',
+    'State Management',
+    'Performance'
+  ];
 
   return (
     <div>
