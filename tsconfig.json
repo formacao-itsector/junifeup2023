@@ -11,12 +11,12 @@
     "resolveJsonModule": true,
     "baseUrl": "./src",
     "paths": {
-      "@navigation" : ["./exports/navigation"],
-      "@store" : ["./exports/store"],
-      "@types" : ["./exports/types"],
-      "@utils" : ["./exports/utils"],
-      "@components" : ["./exports/components"],
-      "@screens" : ["./exports/screens"]
+      "@navigation": ["./exports/navigation"],
+      "@store": ["./exports/store"],
+      "@types": ["./exports/types"],
+      "@utils": ["./exports/utils"],
+      "@components": ["./exports/components"],
+      "@screens": ["./exports/screens"]
     }
   },
   "exclude": ["node_modules"]
