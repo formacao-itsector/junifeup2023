@@ -1,3 +1,4 @@
+import { LanguageEnum, ThemeEnum } from '@types';
 import React, { useState } from 'react';
 
 // 1)Intro
@@ -17,16 +18,6 @@ import React, { useState } from 'react';
 
 //4) React Context substitui o uso de outras ferramentas de gestão de state(ex: Redux/Zustand)?
 // Sim e não; Se não fizermos grande atualização de dados pode ser viável, mas tipicamente para aplicações mais complexas não.
-
-export enum ThemeEnum {
-  Light = 'Light',
-  Dark = 'Dark',
-}
-
-export enum LanguageEnum {
-  PT = 'pt',
-  EN = 'en',
-}
 
 export interface UseContextOutput {
   ThemeContext: React.Context<ThemeEnum>;

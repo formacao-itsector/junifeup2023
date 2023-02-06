@@ -1,7 +1,8 @@
+import { useLanguageState, useThemeState } from '@hooks';
+import { switchLanguage, switchTheme } from '@store';
+import { LanguageEnum, ThemeEnum } from '@types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { switchLanguage, switchTheme } from '../../../../store/reduxExample/action';
-import { LanguageEnum, ThemeEnum, useLanguageState, useThemeState } from '../../../../hooks';
 
 export const ReduxTab: React.FC = () => {
   //hooks
@@ -22,7 +23,7 @@ export const ReduxTab: React.FC = () => {
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="flex justify-center items-center gap-x-32 my-8">
-        <span className="font-Figtree">{isPT ? 'Exemplo de redux:' : 'Redux example:'}</span>
+        <span className="font-bold text-lg">{isPT ? 'Exemplo de redux:' : 'Redux example:'}</span>
 
         <button
           onClick={() => {

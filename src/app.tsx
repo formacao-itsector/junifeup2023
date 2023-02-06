@@ -6,8 +6,8 @@ import { PathListener } from '@components';
 import { Paths } from '@types';
 import './lib/styles/global.css';
 import { Provider } from 'react-redux';
-import { useContextelper } from 'hooks';
-import { reduxStore } from 'store';
+import { useContextelper } from '@hooks';
+import { reduxStore } from '@store';
 
 const App = () => {
   const { ThemeContext, LanguageContext, currentTheme, currentLanguage } = useContextelper();
@@ -28,7 +28,6 @@ const App = () => {
             <PathListener />
           </BrowserRouter>
         </LanguageContext.Provider>
-        /
       </ThemeContext.Provider>
     </Provider>
   );

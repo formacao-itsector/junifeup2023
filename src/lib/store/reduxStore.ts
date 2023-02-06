@@ -1,9 +1,9 @@
 import { combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { reduxExampleReducer, ReduxExampleState } from '.';
+import { reduxExampleReducer, ReduxExampleState } from './reduxExample';
 
 /** Store Type */
-export interface StoreState {
+export interface ReduxStoreState {
   reduxExample: ReduxExampleState;
 }
 

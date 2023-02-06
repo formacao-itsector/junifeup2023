@@ -1,1 +1,1 @@
-export { Anything, Paths } from '../lib/types/types';
+export { Anything, Paths, ThemeEnum, LanguageEnum } from '../lib/types/types';

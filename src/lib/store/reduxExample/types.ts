@@ -1,4 +1,4 @@
-import { LanguageEnum, ThemeEnum } from 'src/hooks';
+import { LanguageEnum, ThemeEnum } from '@types';
 
 export enum Actions {
   SWITCH_THEME = 'SWITCH_THEME',

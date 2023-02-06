@@ -1,15 +1,15 @@
+import { useCoreStore } from '@store';
+import { LanguageEnum, ThemeEnum } from '@types';
 import React from 'react';
-import { useZustandStore } from '../../../../store';
-import { LanguageEnum, ThemeEnum } from '../../../../hooks';
 
 export const ZustandTab: React.FC = () => {
   //zustand states
-  const theme = useZustandStore((state) => state?.theme);
-  const language = useZustandStore((state) => state?.language);
+  const theme = useCoreStore((state) => state?.theme);
+  const language = useCoreStore((state) => state?.language);
 
   //zustand functions
-  const switchTheme = useZustandStore((state) => state.switchTheme);
-  const switchLanguage = useZustandStore((state) => state.switchLanguage);
+  const switchTheme = useCoreStore((state) => state.switch_theme);
+  const switchLanguage = useCoreStore((state) => state.switch_language);
 
   //Flags
   const isLightMode = theme === ThemeEnum.Light;
@@ -24,7 +24,7 @@ export const ZustandTab: React.FC = () => {
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="flex justify-center items-center gap-x-32 my-8">
-        <span className="font-Figtree">{isPT ? 'Exemplo de zustand:' : 'Zustand example:'}</span>
+        <span className="font-bold text-lg">{isPT ? 'Exemplo de zustand:' : 'Zustand example:'}</span>
 
         <button
           onClick={() => {

@@ -41,6 +41,7 @@ const resolveConfig = {
     '@utils': path.resolve(__dirname, './src/exports/utils'),
     '@components': path.resolve(__dirname, './src/exports/components'),
     '@screens': path.resolve(__dirname, './src/exports/screens'),
+    '@hooks': path.resolve(__dirname, './src/exports/hooks'),
   },
 };
 

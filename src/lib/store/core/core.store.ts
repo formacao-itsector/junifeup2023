@@ -2,10 +2,12 @@ import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import produce from 'immer';
 import { CoreStore, CoreStoreActions, CoreStoreState } from './core.types';
-import { Anything, Paths } from '@types';
+import { Anything, LanguageEnum, Paths, ThemeEnum } from '@types';
 
 const initialState: CoreStoreState = {
   current_path: Paths.root,
+  language: LanguageEnum.EN,
+  theme: ThemeEnum.Dark,
 };
 
 const actions = (set: Anything): CoreStoreActions => {
@@ -18,9 +20,29 @@ const actions = (set: Anything): CoreStoreActions => {
       'set_current_path'
     );
   };
+  const switch_theme = () => {
+    set(
+      produce((state: CoreStoreState) => {
+        state.theme = state?.theme === ThemeEnum.Dark ? ThemeEnum.Light : ThemeEnum.Dark;
+      }),
+      false,
+      'switch_theme'
+    );
+  };
+  const switch_language = () => {
+    set(
+      produce((state: CoreStoreState) => {
+        state.language = state?.language === LanguageEnum.EN ? LanguageEnum.PT : LanguageEnum.EN;
+      }),
+      false,
+      'switch_language'
+    );
+  };
 
   return {
     set_current_path,
+    switch_theme,
+    switch_language,
   };
 };
 

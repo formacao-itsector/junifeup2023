@@ -1,5 +1,5 @@
+import { LanguageEnum, ThemeEnum } from '@types';
 import { AnyAction } from 'redux';
-import { LanguageEnum, ThemeEnum } from '../../hooks';
 import { Actions, ReduxExampleState } from './types';
 
 export const reduxExampleInitialState = { theme: ThemeEnum.Dark, language: LanguageEnum.EN };
