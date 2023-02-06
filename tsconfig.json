@@ -9,8 +9,15 @@
     "sourceMap": false,
     "target": "es6",
     "resolveJsonModule": true,
-    "baseUrl": "./",
-    "paths": {}
+    "baseUrl": "./src",
+    "paths": {
+      "@navigation": ["./exports/navigation"],
+      "@store": ["./exports/store"],
+      "@types": ["./exports/types"],
+      "@utils": ["./exports/utils"],
+      "@components": ["./exports/components"],
+      "@screens": ["./exports/screens"]
+    }
   },
   "exclude": ["node_modules"]
 }

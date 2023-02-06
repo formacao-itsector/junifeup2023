@@ -34,7 +34,14 @@ const moduleConfig = {
 // https://webpack.js.org/configuration/resolve/
 
 const resolveConfig = {
-  alias: {},
+  alias: {
+    '@navigation': path.resolve(__dirname, './src/exports/navigation'),
+    '@store': path.resolve(__dirname, './src/exports/store'),
+    '@types': path.resolve(__dirname, './src/exports/types'),
+    '@utils': path.resolve(__dirname, './src/exports/utils'),
+    '@components': path.resolve(__dirname, './src/exports/components'),
+    '@screens': path.resolve(__dirname, './src/exports/screens'),
+  },
 };
 
 // configuração de plugins
