@@ -16,7 +16,8 @@
       "@types": ["./exports/types"],
       "@utils": ["./exports/utils"],
       "@components": ["./exports/components"],
-      "@screens": ["./exports/screens"]
+      "@screens": ["./exports/screens"],
+      "@hooks": ["./exports/hooks"]
     }
   },
   "exclude": ["node_modules"]

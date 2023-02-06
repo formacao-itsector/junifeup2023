@@ -5,21 +5,31 @@ import { ReactAdvanced, ReactBasics, ReactHooks, ReactState, ReactTypescript, St
 import { PathListener } from '@components';
 import { Paths } from '@types';
 import './lib/styles/global.css';
+import { Provider } from 'react-redux';
+import { useContextelper } from '@hooks';
+import { reduxStore } from '@store';
 
 const App = () => {
+  const { ThemeContext, LanguageContext, currentTheme, currentLanguage } = useContextelper();
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={Paths.root} element={<Structure />}>
-          <Route path={Paths.reactBasics} element={<ReactBasics />} />
-          <Route path={Paths.reactTypescript} element={<ReactTypescript />} />
-          <Route path={Paths.reactHooks} element={<ReactHooks />} />
-          <Route path={Paths.reactState} element={<ReactState />} />
-          <Route path={Paths.reactAdvanced} element={<ReactAdvanced />} />
-        </Route>
-      </Routes>
-      <PathListener />
-    </BrowserRouter>
+    <Provider store={reduxStore}>
+      <ThemeContext.Provider value={currentTheme}>
+        <LanguageContext.Provider value={currentLanguage}>
+          <BrowserRouter>
+            <Routes>
+              <Route path={Paths.root} element={<Structure />}>
+                <Route path={Paths.reactBasics} element={<ReactBasics />} />
+                <Route path={Paths.reactTypescript} element={<ReactTypescript />} />
+                <Route path={Paths.reactHooks} element={<ReactHooks />} />
+                <Route path={Paths.reactState} element={<ReactState />} />
+                <Route path={Paths.reactAdvanced} element={<ReactAdvanced />} />
+              </Route>
+            </Routes>
+            <PathListener />
+          </BrowserRouter>
+        </LanguageContext.Provider>
+      </ThemeContext.Provider>
+    </Provider>
   );
 };
 
