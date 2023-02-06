@@ -1,6 +1,9 @@
 {
   "name": "junifeup2023",
   "version": "1.0.0",
+  "files": [
+    "/build"
+  ],
   "scripts": {
     "dev": "webpack serve --config webpack.development.js",
     "prod": "webpack serve --config webpack.production.js",
