@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { BlogPostProps, BlogTypography } from '@components';
+import { BlogComponents, BlogPostProps, BlogTypography } from '@components';
 import { Prism as CodePreview } from 'react-syntax-highlighter';
 import { codeSnippets } from '@utils';
 import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -60,6 +60,23 @@ export const useReactTypescriptHelper = () => {
             </CodePreview>
           </div>
         </div>
+      ),
+      visibility: true,
+    },
+    {
+      id: '5',
+      title: 'Links úteis',
+      children: (
+        <>
+          <div className="flex flex-row gap-6 my-3">
+            <BlogComponents.Link href="https://www.typescriptlang.org/" label="Typescript Docs" hasIcon />
+            <BlogComponents.Link
+              href="https://www.w3schools.com/typescript/typescript_intro.php"
+              label="TypeScript Introduction by W3Schools"
+              hasIcon
+            />
+          </div>
+        </>
       ),
       visibility: true,
     },
