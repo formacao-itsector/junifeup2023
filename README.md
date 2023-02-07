@@ -96,11 +96,6 @@ quais os ficheiros a serem incluidos na analise.
 O Prettier ajuda a haver regras standard de como o codigo é formatado independentemente do IDE, também configuravel 
 atraves dos ficheiros (.prettierrc.js) (.prettierignore)
 
-## React Basics
+### Design Tools
 
-### Arquitetura
-
-Falar sobre a arquitetura em que o projeto esta construida, discutir com a equipa.
-### Named Vs. Default Exports [ [ https://betterprogramming.pub/understanding-the-difference-between-named-and-default-exports-in-react-2d253ca9fc22 ](https://betterprogramming.pub/understanding-the-difference-between-named-and-default-exports-in-react-2d253ca9fc22 ) ]
-
-Escolher entre **named exports** ou **default exports** não é uma decisão que de extrema importância, mas é importante saber a diferença visto que aprofunda o conhecimento e compreensão da aplicação e ajuda em melhorias da arquitetura e leitura de código. 
+Para design o projeto vai recorrer ao [Tailwindcss](https://tailwindcss.com) e [MantineUI](https://mantine.dev), mas podes utilizar uma outra ferramenta cujo estejas mais familiarizado.

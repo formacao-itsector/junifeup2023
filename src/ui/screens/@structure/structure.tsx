@@ -8,7 +8,7 @@ export const Structure: FC = () => {
   const { navigateTo } = useNav();
 
   useEffect(() => {
-    navigateTo({ path: Paths.reactBasics });
+    navigateTo({ path: Paths.repoInit });
   }, []);
 
   return (

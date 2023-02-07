@@ -4,6 +4,7 @@ export { PathListener } from '../ui/components/pathListener/pathListener';
 export { TriangleButton } from '../ui/components/triangleButton/triangleButton';
 export { ExportedName } from '../ui/components/typesOfExports/typesOfExports';
 export { Tabs } from '../ui/components/tabs/tabs';
+export { CodeSnippet } from '../ui/components/codeSnippet/codeSnippet';
 
 import { HorizontalDivider, Link, Section } from '../ui/components/blog/blog.components';
 import { Subtitle, Text, Title } from '../ui/components/blog/blog.typography';

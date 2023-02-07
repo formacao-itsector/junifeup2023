@@ -15,6 +15,7 @@ export const Header: React.FC = () => {
   const currentTimeStamp = new Date().getTime();
 
   const titles: Record<Paths | string, { title: string; enabled: boolean }> = {
+    [Paths.repoInit]: { title: 'Repo Init', enabled: true },
     [Paths.reactBasics]: { title: 'React Basics', enabled: true },
     [Paths.reactTypescript]: { title: 'Typescript', enabled: currentTimeStamp > reactTypescriptTimeStamp },
     [Paths.reactHooks]: { title: 'Hooks', enabled: currentTimeStamp > reactHooksTimeStamp },
@@ -53,7 +54,7 @@ export const Header: React.FC = () => {
         </a>
         {titles[current_path].title}
       </h1>
-      <div className="grid grid-cols-5 mt-8 sm:grid-cols-5 items-center">{navLinks}</div>
+      <div className="flex justify-around mt-5 items-center">{navLinks}</div>
     </div>
   );
 };
