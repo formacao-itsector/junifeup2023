@@ -47,7 +47,7 @@ const RepoInitDevDependencies = `npm i -D @types/react @types/react-dom
 const RepoInitScripts = `"scripts": {
     "dev": "webpack serve --config webpack.development.js",
     "prod": "webpack serve --config webpack.production.js",
-        "build": "rm -rf ./build && webpack --config webpack.production.js",
+    "build": "rm -rf ./build && webpack --config webpack.production.js",
     "serve": "serve -s build -p 5005",
     "prettier": "prettier --write . --loglevel warn",
     "eslint": "eslint \'src/**\' --fix",
