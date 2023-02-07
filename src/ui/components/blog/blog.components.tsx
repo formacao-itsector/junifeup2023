@@ -28,7 +28,7 @@ export const HorizontalDivider = () => {
 
 export const Link = ({ label, href, hasIcon }: LinkProps) => {
   return (
-    <a href={href} className={'w-fit group'}>
+    <a href={href} className={'w-fit group'} target="_blank" rel="noreferrer">
       <div className="flex flex-row gap-1 items-center leading-snug transition-colors text-violet-400 group-hover:text-violet-500">
         {label} {hasIcon && <ExternalLinkIcon className="w-3 h-3" />}
       </div>
