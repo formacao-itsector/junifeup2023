@@ -27,8 +27,8 @@ export const Header: React.FC = () => {
     const links: ReactNode[] = [];
 
     for (const path in titles) {
-      const label = titles[path as Paths].title;
-      const enabled = titles[path as Paths].enabled;
+      const label = titles[path as Paths]?.title;
+      const enabled = titles[path as Paths]?.enabled;
       if (enabled)
         links.push(
           <a
@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
         >
           ITSector |&nbsp;
         </a>
-        {titles[current_path].title}
+        {titles[current_path]?.title}
       </h1>
       <div className="flex justify-around mt-5 items-center">{navLinks}</div>
     </div>
