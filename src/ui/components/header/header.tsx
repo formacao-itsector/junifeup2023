@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
   const current_path = useCoreStore((state) => state.current_path);
 
   const titles: Record<Paths | string, string> = {
+    [Paths.repoInit]: 'Repo Init',
     [Paths.reactBasics]: 'React Basics',
     [Paths.reactTypescript]: 'Typescript',
     [Paths.reactHooks]: 'Hooks',
@@ -24,7 +25,7 @@ export const Header: React.FC = () => {
         <a
           key={path}
           onClick={() => navigateTo({ path: path as Paths })}
-          className="text-zinc-300 flex justify-center font-bold text-lg transition-all hover:text-violet-600 hover:-translate-y-[2px] hover:cursor-pointer"
+          className="text-zinc-300 flex font-bold text-lg transition-all hover:text-violet-600 hover:-translate-y-[2px] hover:cursor-pointer"
         >
           {label}
         </a>
@@ -44,7 +45,7 @@ export const Header: React.FC = () => {
         </a>
         {titles[current_path]}
       </h1>
-      <div className="grid grid-cols-5 mt-8 sm:grid-cols-5 items-center">{navLinks}</div>
+      <div className="flex justify-around mt-5 items-center">{navLinks}</div>
     </div>
   );
 };
