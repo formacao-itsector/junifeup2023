@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { BlogPostProps, BlogComponents, BlogTypography, CodeSnippet } from '@components';
 import { codeSnippets } from '@utils';
+import { ExternalLinkIcon } from '@radix-ui/react-icons';
 
 export const useRepoInitHelper = () => {
   const [articles, setArticles] = useState<BlogPostProps[]>([
@@ -222,6 +223,20 @@ export const useRepoInitHelper = () => {
         <div className="flex flex-row gap-6 mt-3">
           <BlogComponents.Link href="https://mantine.dev" label="Tailwindcss" hasIcon />
           <BlogComponents.Link href="familiarizado" label="MantineUI" hasIcon />
+        </div>
+      ),
+      visibility: true,
+    },
+    {
+      id: '10',
+      title: 'Configs Files',
+      children: (
+        <div className="flex flex-row gap-6 mt-3">
+          <a href="./configs.zip" className={'w-fit group'} download>
+            <div className="flex flex-row gap-1 items-center leading-snug transition-colors text-violet-400 group-hover:text-violet-500">
+              configs.zip <ExternalLinkIcon className="w-3 h-3" />
+            </div>
+          </a>
         </div>
       ),
       visibility: true,
