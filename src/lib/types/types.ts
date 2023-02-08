@@ -9,6 +9,7 @@ export enum Paths {
   reactHooks = 'react-hooks',
   reactState = 'react-state',
   reactAdvanced = 'react-advanced',
+  reactPropsState = 'react-propsState',
 }
 
 export enum ThemeEnum {
