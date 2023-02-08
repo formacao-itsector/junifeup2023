@@ -54,6 +54,34 @@ const RepoInitScripts = `"scripts": {
     "ready": "npm run prettier && npm run eslint"
   },`;
 
+const PropsExample = `import React from 'react';
+
+  // Criamos um componente "Welcome" que recebe um prop "name"
+  export const Welcome = (props) => {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  
+  // Aqui usamos o componente "Welcome" e passamos o valor "JuniFeup" para o prop "name"
+  export const App = () => {
+    return <Welcome name="JuniFeup" />;
+  }`;
+
+const StateExample = `import React, { useState } from 'react';
+
+export const Example() {
+  // Declaramos um state com o nome "count" e o inicializamos com 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}`;
+
 export const codeSnippets = {
   NamedExportButtonSyntax,
   DefaultExportButtonSyntax,
@@ -65,4 +93,6 @@ export const codeSnippets = {
   RepoInitDependencies,
   RepoInitDevDependencies,
   RepoInitScripts,
+  PropsExample,
+  StateExample,
 };
