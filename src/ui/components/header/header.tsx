@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const current_path = useCoreStore((state) => state.current_path);
 
   const reactTypescriptTimeStamp = new Date('2023-02-13 18:20').getTime();
-  const reactHooksTimeStamp = new Date('2023-02-15 18:20').getTime();
+  const reactHooksTimeStamp = new Date('2023-02-13 18:20').getTime();
   const reactStateTimeStamp = new Date('2023-02-17 18:20').getTime();
   // const reactAdvancedTimesStamp = new Date('2023-02-17 18:20').getTime();
   const reactPropsStateTimesStamp = new Date('2023-02-09 18:20').getTime();
