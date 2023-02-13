@@ -7,8 +7,8 @@ export const Header: React.FC = () => {
   const { navigateTo } = useNav();
   const current_path = useCoreStore((state) => state.current_path);
 
-  const reactTypescriptTimeStamp = new Date('2023-02-13 18:20').getTime();
-  const reactHooksTimeStamp = new Date('2023-02-15 18:20').getTime();
+  // const reactTypescriptTimeStamp = new Date('2023-02-13 18:20').getTime();
+  // const reactHooksTimeStamp = new Date('2023-02-13 18:20').getTime();
   const reactStateTimeStamp = new Date('2023-02-17 18:20').getTime();
   // const reactAdvancedTimesStamp = new Date('2023-02-17 18:20').getTime();
   const reactPropsStateTimesStamp = new Date('2023-02-09 18:20').getTime();
@@ -19,8 +19,8 @@ export const Header: React.FC = () => {
     [Paths.repoInit]: { title: 'Repo Init', enabled: true },
     [Paths.reactBasics]: { title: 'React Basics', enabled: true },
     [Paths.reactPropsState]: { title: 'React Props & State', enabled: currentTimeStamp > reactPropsStateTimesStamp },
-    [Paths.reactTypescript]: { title: 'Typescript', enabled: currentTimeStamp > reactTypescriptTimeStamp },
-    [Paths.reactHooks]: { title: 'Hooks', enabled: currentTimeStamp > reactHooksTimeStamp },
+    [Paths.reactTypescript]: { title: 'Typescript', enabled: true },
+    [Paths.reactHooks]: { title: 'Hooks', enabled: true },
     [Paths.reactState]: { title: 'State Management', enabled: currentTimeStamp > reactStateTimeStamp },
     // [Paths.reactAdvanced]: { title: 'Advanced', enabled: currentTimeStamp > reactAdvancedTimesStamp },
   };
