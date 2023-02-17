@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   const reactTypescriptTimeStamp = new Date('2023-02-13 18:20').getTime();
   const reactHooksTimeStamp = new Date('2023-02-13 18:20').getTime();
   const reactStateTimeStamp = new Date('2023-02-17 18:20').getTime();
-  // const reactAdvancedTimesStamp = new Date('2023-02-17 18:20').getTime();
+  const reactAdvancedTimesStamp = new Date('2023-02-15 18:20').getTime();
   const reactPropsStateTimesStamp = new Date('2023-02-09 18:20').getTime();
 
   const currentTimeStamp = new Date().getTime();
@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
     [Paths.reactTypescript]: { title: 'Typescript', enabled: currentTimeStamp > reactTypescriptTimeStamp },
     [Paths.reactHooks]: { title: 'Hooks', enabled: currentTimeStamp > reactHooksTimeStamp },
     [Paths.reactState]: { title: 'State Management', enabled: currentTimeStamp > reactStateTimeStamp },
-    // [Paths.reactAdvanced]: { title: 'Advanced', enabled: currentTimeStamp > reactAdvancedTimesStamp },
+    [Paths.reactAdvanced]: { title: 'Advanced', enabled: currentTimeStamp > reactAdvancedTimesStamp },
   };
 
   const navLinks = useMemo(() => {
