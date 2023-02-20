@@ -10,6 +10,7 @@ export interface BlogPostProps {
   title?: string;
   content?: string | React.ReactNode;
   children?: React.ReactNode;
+  hideFlag?: boolean;
   visibility?: boolean;
 }
 
@@ -19,10 +20,16 @@ export const Blog: React.FC<BlogProps> = ({ blogEntries, handleArticleVisibility
       {blogEntries.map((entry) => {
         return (
           <>
-            <div className="flex flex-row">
-              {entry.title && <BlogComponents.Section content={entry.title} />}
-              <TriangleButton onClick={() => handleArticleVisibilityOnClick(entry.id)} triangleUp={!entry.visibility} />
-            </div>
+            {!entry.hideFlag && (
+              <div className="flex flex-row">
+                {entry.title && <BlogComponents.Section content={entry.title} />}
+                <TriangleButton
+                  onClick={() => handleArticleVisibilityOnClick(entry.id)}
+                  triangleUp={!entry.visibility}
+                />
+              </div>
+            )}
+
             {entry.visibility && (
               <div className="flex flex-row">
                 <div className="w-[1px] rounded bg-zinc-600 ml-[0.38rem]" />

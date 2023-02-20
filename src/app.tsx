@@ -1,7 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ReactAdvanced, ReactBasics, ReactHooks, ReactState, ReactTypescript, Structure } from '@screens';
+import {
+  ReactAdvanced,
+  ReactBasics,
+  ReactHooks,
+  ReactState,
+  ReactTypescript,
+  Structure,
+  RepoInit,
+  ReactPropsState,
+} from '@screens';
 import { PathListener } from '@components';
 import { Paths } from '@types';
 import './lib/styles/global.css';
@@ -18,8 +27,10 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path={Paths.root} element={<Structure />}>
+                <Route path={Paths.repoInit} element={<RepoInit />} />
                 <Route path={Paths.reactBasics} element={<ReactBasics />} />
                 <Route path={Paths.reactTypescript} element={<ReactTypescript />} />
+                <Route path={Paths.reactPropsState} element={<ReactPropsState />} />
                 <Route path={Paths.reactHooks} element={<ReactHooks />} />
                 <Route path={Paths.reactState} element={<ReactState />} />
                 <Route path={Paths.reactAdvanced} element={<ReactAdvanced />} />

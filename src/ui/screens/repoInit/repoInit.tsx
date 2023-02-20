@@ -1,9 +1,10 @@
 import { Blog } from '@components';
 import React from 'react';
-import { useReactHooksHelper } from './reactHooks.helper';
+import { useRepoInitHelper } from './repoInit.helper';
 
-export const ReactHooks: React.FC = () => {
-  const { articles, handleArticleVisibilityOnClick } = useReactHooksHelper();
+export const RepoInit: React.FC = () => {
+  const { articles, handleArticleVisibilityOnClick } = useRepoInitHelper();
+
   return (
     <div className="flex flex-col items-center gap-16 mb-40">
       <div className="mx-2 md:mx-0">

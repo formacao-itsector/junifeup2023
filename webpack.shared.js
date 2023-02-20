@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 // documentação geral https://webpack.js.org/configuration/
 
@@ -65,6 +66,9 @@ const pluginConfig = () => {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
       emitWarning: true,
+    }),
+    new CopyPlugin({
+      patterns: [{ from: './public/configs.zip' }],
     }),
   ];
 };

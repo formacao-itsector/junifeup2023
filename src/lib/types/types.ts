@@ -3,11 +3,13 @@ export type Anything = any;
 
 export enum Paths {
   root = '/',
+  repoInit = 'repo-init',
   reactBasics = 'react-basics',
   reactTypescript = 'react-typescript',
   reactHooks = 'react-hooks',
   reactState = 'react-state',
   reactAdvanced = 'react-advanced',
+  reactPropsState = 'react-propsState',
 }
 
 export enum ThemeEnum {
