@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 export const ReduxTab: React.FC = () => {
   //hooks
   const dispatch = useDispatch();
+
   const theme = useThemeState();
   const language = useLanguageState();
 
