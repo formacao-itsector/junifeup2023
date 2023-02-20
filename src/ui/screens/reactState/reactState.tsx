@@ -1,6 +1,6 @@
 import { Tabs } from '@components';
 import React, { useState } from 'react';
-import { ContextTab, ReduxTab, ZustandTab } from './tabs';
+import { ContextTab, ReduxTab, ZustandTab, FormExampleTab } from './tabs';
 
 export const ReactState: React.FC = () => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -9,7 +9,7 @@ export const ReactState: React.FC = () => {
       <div className="flex justify-center items-center">
         <Tabs
           currentTab={currentTab}
-          tabs={['Context', 'Redux', 'Zustand']}
+          tabs={['Context', 'Redux', 'Zustand', 'Form example']}
           onClick={(i) => {
             setCurrentTab(i);
           }}
@@ -18,6 +18,7 @@ export const ReactState: React.FC = () => {
       {currentTab === 0 && <ContextTab />}
       {currentTab === 1 && <ReduxTab />}
       {currentTab === 2 && <ZustandTab />}
+      {currentTab === 3 && <FormExampleTab />}
     </div>
   );
 };

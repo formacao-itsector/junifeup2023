@@ -5,6 +5,8 @@ import React, { useContext } from 'react';
 export const ContextTab: React.FC = () => {
   //hooks
   const { userThemeSwitch, userLanguageSwitch, ThemeContext, LanguageContext } = useContextelper();
+
+  //Context consumers
   const userTheme = useContext(ThemeContext);
   const userLanguage = useContext(LanguageContext);
 
